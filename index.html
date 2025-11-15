@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exerge Clone | Modern Frontend</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">
+      <h2>exerge<span>it</span></h2>
+    </div>
+    <nav class="nav-links">
+      <a href="#company">Company</a>
+      <a href="#services">Services</a>
+      <a href="#work">Our Work</a>
+      <a href="#latest">Latest</a>
+      <a href="#contact">Contact Us</a>
+    </nav>
+    <button class="quote-btn" onclick="scrollToSection('quote')">Get a Quote</button>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Websites.</h1>
+      <p>We design and build modern digital experiences for innovative brands.</p>
+      <button onclick="scrollToSection('services')">Learn More</button>
+    </div>
+  </section>
+
+  <!-- Company Section -->
+  <section class="section" id="company">
+    <h2>About Our Company</h2>
+    <p>
+      We are a creative technology agency that specializes in crafting unique digital experiences
+      through cutting-edge web design, branding, and development.
+    </p>
+  </section>
+
+  <!-- Services Section -->
+  <section class="section" id="services">
+    <h2>Our Services</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>Web Design</h3>
+        <p>Beautiful and responsive designs tailored to your brand identity.</p>
+      </div>
+      <div class="service-card">
+        <h3>Web Development</h3>
+        <p>Robust and scalable solutions using the latest technologies.</p>
+      </div>
+      <div class="service-card">
+        <h3>Branding</h3>
+        <p>Helping your business stand out with memorable brand visuals.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Work Section -->
+  <section class="section" id="work">
+    <h2>Our Work</h2>
+    <div class="work-gallery">
+      <div class="work-box"></div>
+      <div class="work-box"></div>
+      <div class="work-box"></div>
+    </div>
+  </section>
+
+  <!-- Latest Section -->
+  <section class="section" id="latest">
+    <h2>Latest Updates</h2>
+    <p>Stay tuned for our latest news, innovations, and blog articles.</p>
+  </section>
+
+  <!-- Get a Quote Section -->
+  <section class="quote-section" id="quote">
+    <h2>Get a Quote</h2>
+    <p>Fill out the form below and we’ll get back to you shortly.</p>
+    <form class="quote-form">
+      <input type="text" placeholder="Full Name" required />
+      <input type="email" placeholder="Email Address" required />
+      <input type="text" placeholder="Company Name" />
+      <textarea placeholder="Project Details..." required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <p>© 2025 Exerge Clone. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
