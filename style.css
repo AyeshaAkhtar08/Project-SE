@@ -1,4 +1,6 @@
 /* General Reset */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -6,10 +8,14 @@
   font-family: 'Poppins', sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #0f0f0f;
   color: white;
-  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 /* Navbar */
@@ -18,16 +24,26 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 20px 60px;
-  background: #111;
+  background: transparent;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
+  transition: all 0.4s ease;
+}
+
+/* JS Toggles this class */
+.navbar.scrolled {
+  background: rgba(17, 17, 17, 0.95);
+  padding: 15px 60px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
 }
 
 .logo h2 {
   color: white;
   font-weight: 600;
+  cursor: pointer;
 }
 
 .logo span {
@@ -44,6 +60,7 @@ body {
 
 .nav-links a:hover {
   color: #fff;
+  border-bottom: 2px solid #ffbb00;
 }
 
 .quote-btn {
@@ -63,7 +80,7 @@ body {
 
 /* Hero Section */
 .hero {
-  background: #0f0f0f;
+  background: radial-gradient(circle at center, #1a1a1a 0%, #0f0f0f 100%);
   height: 100vh;
   display: flex;
   align-items: center;
@@ -74,8 +91,9 @@ body {
 }
 
 .hero h1 {
-  font-size: 8rem;
+  font-size: 5rem;
   font-weight: 800;
+  margin-bottom: 10px;
 }
 
 .hero p {
@@ -87,7 +105,7 @@ body {
 
 .hero button {
   margin-top: 30px;
-  padding: 10px 25px;
+  padding: 12px 30px;
   border: none;
   border-radius: 30px;
   background: #fff;
@@ -111,6 +129,18 @@ body {
 .section h2 {
   font-size: 2.5rem;
   margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+.section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #ffbb00;
+    margin: 10px auto 0;
+    border-radius: 2px;
 }
 
 .section p {
@@ -135,11 +165,22 @@ body {
   border-radius: 20px;
   width: 300px;
   transition: 0.3s;
+  border: 1px solid #333;
+}
+
+.service-card h3 {
+    margin-bottom: 15px;
+    color: white;
 }
 
 .service-card:hover {
-  background: #ffbb00;
-  color: #000;
+  background: #222;
+  border-color: #ffbb00;
+  transform: translateY(-10px);
+}
+
+.service-card:hover h3 {
+    color: #ffbb00;
 }
 
 /* Work Gallery */
@@ -170,38 +211,33 @@ body {
   text-align: center;
 }
 
-.quote-section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-}
-
-.quote-section p {
-  color: #aaa;
-  margin-bottom: 30px;
-}
-
 .quote-form {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 15px;
   max-width: 500px;
-  margin: auto;
+  margin: 30px auto;
 }
 
 .quote-form input,
 .quote-form textarea {
   width: 100%;
-  padding: 12px;
+  padding: 15px;
   border-radius: 10px;
-  border: none;
+  border: 1px solid #333;
   outline: none;
-  background: #222;
+  background: #0f0f0f;
   color: #fff;
+  transition: border 0.3s;
+}
+
+.quote-form input:focus, .quote-form textarea:focus {
+    border-color: #ffbb00;
 }
 
 .quote-form textarea {
-  resize: none;
+  resize: vertical;
   height: 120px;
 }
 
@@ -209,15 +245,21 @@ body {
   background: #ffbb00;
   color: #000;
   font-weight: bold;
-  padding: 12px 25px;
+  padding: 15px 40px;
   border-radius: 25px;
   border: none;
   cursor: pointer;
   transition: 0.3s;
+  width: 100%;
 }
 
 .quote-form button:hover {
   background: #fff;
+}
+
+.quote-form button.success {
+    background-color: #4CAF50;
+    color: white;
 }
 
 /* Footer */
@@ -226,4 +268,24 @@ body {
   padding: 40px;
   background: #0a0a0a;
   color: #888;
+}
+
+/* --- Animations --- */
+.hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar { padding: 20px; }
+    .nav-links { display: none; }
+    .hero h1 { font-size: 3rem; }
+    .section { padding: 80px 20px; }
 }

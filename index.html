@@ -6,6 +6,16 @@
   <title>Exerge Clone | Modern Frontend</title>
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+  emailjs.init("XPcCcDHxEky3RTEtj"); // this will work
+</script>
+<script>
+  (function() {
+    emailjs.init("XPcCcDHxEky3RTEtj"); // Replace with your EmailJS Public Key
+  })();
+</script>
+
 </head>
 <body>
   <!-- Navbar -->
@@ -78,16 +88,20 @@
 
   <!-- Get a Quote Section -->
   <section class="quote-section" id="quote">
-    <h2>Get a Quote</h2>
-    <p>Fill out the form below and we’ll get back to you shortly.</p>
-    <form class="quote-form">
-      <input type="text" placeholder="Full Name" required />
-      <input type="email" placeholder="Email Address" required />
-      <input type="text" placeholder="Company Name" />
-      <textarea placeholder="Project Details..." required></textarea>
-      <button type="submit">Submit</button>
-    </form>
-  </section>
+  <h2>Get a Quote</h2>
+  <p>Fill out the form below and we’ll get back to you shortly.</p>
+  
+  <form class="quote-form" id="quoteForm">
+    <input type="text" id="fullName" name="fullName" placeholder="Full Name" required />
+    <input type="email" id="email" name="email" placeholder="Email Address" required />
+    <input type="text" id="company" name="company" placeholder="Company Name" />
+    <textarea id="details" name="details" placeholder="Project Details..." required></textarea>
+    <button type="submit">Submit</button>
+  </form>
+
+  <div id="status" style="margin-top: 20px; color: #fff;"></div>
+</section>
+
 
   <!-- Footer -->
   <footer class="footer" id="contact">
