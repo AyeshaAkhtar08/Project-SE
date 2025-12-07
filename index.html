@@ -46,8 +46,11 @@
   <section class="section" id="company">
     <h2>About Our Company</h2>
     <p>
-      We are a creative technology agency that specializes in crafting unique digital experiences
-      through cutting-edge web design, branding, and development.
+        Exerge is a creative technology agency specializing in designing and developing unique digital experiences. 
+        They offer end-to-end solutions, including web and mobile app development, branding, and SEO services. 
+        Their team focuses on creating visually compelling, user-friendly, and scalable products tailored to each client’s needs. 
+        With a strong commitment to quality and innovation, Exerge ensures that projects are delivered on time and generate real business value. 
+        By blending creativity with technology, they help businesses stand out and succeed in the digital landscape.
     </p>
   </section>
 
@@ -56,34 +59,81 @@
     <h2>Our Services</h2>
     <div class="services-grid">
       <div class="service-card">
-        <h3>Web Design</h3>
-        <p>Beautiful and responsive designs tailored to your brand identity.</p>
+        <h3>Web Application</h3>
+        <p>Interactive and scalable web applications tailored to your business needs.</p>
       </div>
       <div class="service-card">
         <h3>Web Development</h3>
         <p>Robust and scalable solutions using the latest technologies.</p>
       </div>
       <div class="service-card">
-        <h3>Branding</h3>
-        <p>Helping your business stand out with memorable brand visuals.</p>
+        <h3>Mobile AppMobile App</h3>
+        <p>Custom mobile app development for seamless user experiences on iOS and Android.</p>
+      </div>
+      <div class="service-card">
+        <h3>Web Branding and Design</h3>
+        <p>Beautiful and responsive designs tailored to your brand identity.</p>
+      </div>
+            <div class="service-card">
+        <h3>Managed Website Hosting</h3>
+        <p>Reliable and hassle-free hosting services with full management and support for your website.</p>
+      </div>
+            <div class="service-card">
+        <h3>SEO</h3>
+        <p>Optimizing your website to rank higher in search engines and attract more organic traffic.</p>
       </div>
     </div>
   </section>
 
   <!-- Our Work Section -->
-  <section class="section" id="work">
-    <h2>Our Work</h2>
-    <div class="work-gallery">
-      <div class="work-box"></div>
-      <div class="work-box"></div>
-      <div class="work-box"></div>
+<section class="section" id="work">
+  <h2>Our Work</h2>
+
+  <div class="work-gallery">
+
+    <!-- Work 1 -->
+    <div class="work-item">
+      <div class="work-box">
+        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1200" alt="Project 1">
+        <span class="work-title">Brand Identity Design</span>
+      </div>
+      <p class="work-desc">
+        Exerge helps brands build a strong digital identity through modern visual design,
+        clean layouts, and user-friendly interfaces that elevate business presence online.
+      </p>
     </div>
-  </section>
+
+    <!-- Work 2 -->
+    <div class="work-item">
+      <div class="work-box">
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200" alt="Project 2">
+        <span class="work-title">Web Development</span>
+      </div>
+      <p class="work-desc">
+        Our team builds fast, responsive, and scalable websites using the latest web
+        technologies to ensure reliability, performance, and outstanding user experience.
+      </p>
+    </div>
+
+    <!-- Work 3 -->
+    <div class="work-item">
+      <div class="work-box">
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200" alt="Project 3">
+        <span class="work-title">Product Strategy</span>
+      </div>
+      <p class="work-desc">
+        Exerge works closely with clients to plan digital products that solve real
+        business problems through data-driven strategy, UX research, and creative thinking.
+      </p>
+    </div>
+
+  </div>
+</section>
 
   <!-- Latest Section -->
   <section class="section" id="latest">
     <h2>Latest Updates</h2>
-    <p>Stay tuned for our latest news, innovations, and blog articles.</p>
+    <p>Stay updated with our latest news, innovations, and expert insights.Explore our blog for in-depth articles and industry trends.</p>
   </section>
 
   <!-- Get a Quote Section -->
@@ -91,20 +141,76 @@
   <h2>Get a Quote</h2>
   <p>Fill out the form below and we’ll get back to you shortly.</p>
   
-  <form class="quote-form" id="quoteForm">
-    <input type="text" id="fullName" name="fullName" placeholder="Full Name" required />
-    <input type="email" id="email" name="email" placeholder="Email Address" required />
-    <input type="text" id="company" name="company" placeholder="Company Name" />
-    <textarea id="details" name="details" placeholder="Project Details..." required></textarea>
-    <button type="submit">Submit</button>
-  </form>
+<section class="quote-section" id="quote">
+    <h2>Get a Quote</h2>
+    <p>Fill out the form below and we'll get back to you shortly.</p>
+
+    <form id="quoteForm" class="quote-form">
+
+        <input type="text" id="firstName" placeholder="First Name" required>
+        <input type="text" id="lastName" placeholder="Last Name" required>
+        <input type="text" id="surName" placeholder="Father Name" required>
+        <input type="email" id="email" placeholder="Email Address" required>
+
+        <input type="text" id="contact" placeholder="Contact Number" required>
+
+        <select id="services" required>
+            <option value="">Select a Service</option>
+            <option>Website Development</option>
+            <option>Web Application</option>
+            <option>Mobile App</option>
+            <option>Managed Website Hosting</option>
+            <option>Branding & Design</option>
+            <option>Search Engine Optimization</option>
+        </select>
+
+        <textarea id="details" placeholder="Project Details..." required></textarea>
+
+        <div id="status"></div>
+
+        <button type="submit">Submit</button>
+    </form>
+</section>
+
 
   <div id="status" style="margin-top: 20px; color: #fff;"></div>
 </section>
 
   <!-- Footer -->
-  <footer class="footer" id="contact">
+<footer class="footer" id="contact">
+    <h2 class="footer-title">Contact Us</h2>
     <p>© 2025 Exerge Clone. All Rights Reserved.</p>
-  </footer>
+
+    <div class="footer-wrapper">
+
+        <!-- UK -->
+        <div class="footer-col">
+            <h3>UK</h3>
+            <p>20, Chines Gardens,<br>
+            West Bridgford,<br>
+            NG27TT<br>
+            UK</p>
+        </div>
+
+        <!-- Pakistan -->
+        <div class="footer-col">
+            <h3>PK</h3>
+            <p>2121,<br>
+            Phase 7, Bahria Town,<br>
+            Islamabad, 46000<br>
+            PK</p>
+        </div>
+
+        <!-- Conversation -->
+        <div class="footer-col">
+            <h3>Conversation</h3>
+            <p>Email: hello@exerge.com</p>
+            <p>UK: 07934 554778</p>
+            <p>Pakistan: 0308 8557557</p>
+            <p>Americas: 646 932 3253</p>
+        </div>
+
+    </div>
+</footer>
 </body>
 </html>
