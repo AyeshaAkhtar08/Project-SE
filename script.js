@@ -1,6 +1,21 @@
 // ------------------------------
 // Sticky Navbar on Scroll
 // ------------------------------
+const cursor = document.getElementById('custom-cursor');
+
+document.addEventListener('mousemove', (e) => {
+  cursor.style.left = e.clientX + 'px';
+  cursor.style.top = e.clientY + 'px';
+});
+
+// Optional: cursor grows on click
+document.addEventListener('mousedown', () => {
+  cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
+});
+document.addEventListener('mouseup', () => {
+  cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+});
+
 window.addEventListener("scroll", () => {
   const navbar = document.querySelector(".navbar");
   if (window.scrollY > 50) navbar.classList.add("scrolled");
@@ -105,4 +120,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
   });
 
+});
+const cookiePopup = document.getElementById('cookie-popup');
+const acceptBtn = document.getElementById('accept-cookies');
+
+// Check if user already accepted cookies
+if (!localStorage.getItem('cookiesAccepted')) {
+  cookiePopup.style.display = 'flex';
+} else {
+  cookiePopup.style.display = 'none';
+}
+
+acceptBtn.addEventListener('click', () => {
+  localStorage.setItem('cookiesAccepted', 'true');
+  cookiePopup.style.display = 'none';
 });
