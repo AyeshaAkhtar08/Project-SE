@@ -429,18 +429,63 @@ body {
   transition: transform 0.1s ease, background-color 0.2s ease;
   z-index: 10000;
 }
-#cookie-popup button {
-  background-color: #e1e1e1; /* Bright, eye-catching */
-  color: navy;
+#cookie-popup {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: #2a2a72; /* Dark navy popup background */
+  color: white;
+  padding: 15px 25px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  z-index: 10000;
+  font-family: Arial, sans-serif;
+  max-width: 350px;
+}
+
+#cookie-popup a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Cookie-shaped button */
+.cookie-btn {
+  position: relative;
+  background: #98460c; /* Cookie brown */
+  color: white;
   border: none;
-  padding: 10px 25px;
-  border-radius: 50px; /* Fully rounded */
+  border-radius: 50%; /* Makes it circular */
+  width: 60px;
+  height: 60px;
+  font-size: 12px;
   font-weight: bold;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
   transition: all 0.3s ease;
 }
 
-#cookie-popup button:hover {
-  background-color: #bababa;
-  transform: scale(1.05);
+/* Chocolate chips */
+.cookie-btn::before,
+.cookie-btn::after,
+.cookie-btn span::before,
+.cookie-btn span::after {
+  content: '';
+  position: absolute;
+  background-color: #3e1f0d; /* Darker chocolate chip color */
+  border-radius: 50%;
+}
+
+.cookie-btn::before { top: 15%; left: 20%; width: 8px; height: 8px; }
+.cookie-btn::after { bottom: 20%; right: 25%; width: 10px; height: 10px; }
+.cookie-btn span::before { top: 40%; right: 15%; width: 6px; height: 6px; }
+.cookie-btn span::after { bottom: 25%; left: 35%; width: 7px; height: 7px; }
+
+.cookie-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 8px rgba(0,0,0,0.4);
 }
