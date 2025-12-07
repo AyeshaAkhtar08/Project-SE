@@ -123,7 +123,6 @@ document.addEventListener("DOMContentLoaded", function() {
 const cookiePopup = document.getElementById('cookie-popup');
 const acceptBtn = document.getElementById('accept-cookies');
 
-// Check if user already accepted cookies
 if (!localStorage.getItem('cookiesAccepted')) {
   cookiePopup.style.display = 'flex';
 } else {
