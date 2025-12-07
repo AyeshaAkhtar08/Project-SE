@@ -46,20 +46,24 @@ body {
 }
 
 .logo span {
-  color: #525252;
+  color: #cbcbcb;
 }
 
 .nav-links a {
-  color: #545454;
+  color: #dedddd;
   text-decoration: none;
   margin: 0 15px;
   font-weight: 500;
   transition: color 0.3s ease;
+  -webkit-transition: color 0.3s ease;
+  -moz-transition: color 0.3s ease;
+  -ms-transition: color 0.3s ease;
+  -o-transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
   color: #f5f5f5;
-  border-bottom: 2px solid #4b4b4b;
+  border-bottom: 2px solid #c4c2c2;
 }
 
 .quote-btn {
@@ -74,12 +78,12 @@ body {
 }
 
 .quote-btn:hover {
-  background: #474747;
+  background: #bdbdbd;
 }
 
 /* Hero Section */
 .hero {
-  background: radial-gradient(circle at center, #322b5d 0%, #110a3a 100%);
+  background: radial-gradient(circle at center, #20184e 0%, #110a3a 100%);
   height: 100vh;
   display: flex;
   align-items: center;
@@ -98,7 +102,7 @@ body {
 .hero p {
   font-size: 1.3rem;
   margin-top: 20px;
-  color: #575757;
+  color: #dfdede;
   max-width: 600px;
 }
 
@@ -115,7 +119,7 @@ body {
 }
 
 .hero button:hover {
-  background: #424242;
+  background: #bebebe;
 }
 
 /* Sections */
@@ -137,13 +141,13 @@ body {
     display: block;
     width: 60px;
     height: 4px;
-    background: #4a4a4a;
+    background: #c8c8c8;
     margin: 10px auto 0;
     border-radius: 2px;
 }
 
 .section p {
-  color: #464646;
+  color: #d4d4d4;
   max-width: 800px;
   margin: 0 auto;
   line-height: 1.6;
@@ -164,7 +168,7 @@ body {
   border-radius: 20px;
   width: 300px;
   transition: 0.3s;
-  border: 1px solid #424141;
+  border: 1px solid #bababa;
 }
 
 .service-card h3 {
@@ -173,13 +177,13 @@ body {
 }
 
 .service-card:hover {
-  background: #504e4e;
-  border-color: #4c4c4c;
+  background: #b5b5b5;
+  border-color: #bfbfbf;
   transform: translateY(-10px);
 }
 
 .service-card:hover h3 {
-    color: #484848;
+    color: #bcbcbc;
 }
 
 /* Work Gallery */
@@ -193,13 +197,13 @@ body {
 .work-box {
   width: 300px;
   height: 200px;
-  background: #222;
+  background: #b8b7b7;
   border-radius: 15px;
   transition: 0.3s;
 }
 
 .work-box:hover {
-  background: #575757;
+  background: #b9b9b9;
   transform: scale(1.05);
 }
 
@@ -225,7 +229,7 @@ body {
   width: 100%;
   padding: 15px;
   border-radius: 10px;
-  border: 1px solid #3f3f3f;
+  border: 1px solid #b4b2b2;
   outline: none;
   background: #040421;
   color: #fff;
@@ -233,7 +237,7 @@ body {
 }
 
 .quote-form input:focus, .quote-form textarea:focus, .quote-form select:focus {
-    border-color: #707070;
+    border-color: #d1d1d1;
 }
 
 .quote-form textarea {
@@ -242,7 +246,7 @@ body {
 }
 
 .quote-form button {
-  background: #6d6c6a;
+  background: #bababa;
   color: #0f0f3e;
   font-weight: bold;
   padding: 15px 40px;
@@ -258,7 +262,7 @@ body {
 }
 
 .quote-form button.success {
-    background-color: #7b7d7b;
+    background-color: #bababa;
     color: white;
 }
 
@@ -267,7 +271,7 @@ body {
   text-align: center;
   padding: 40px;
   background: #04042c;
-  color: #595858;
+  color: #bfbfbf;
 }
 
 /* --- Animations --- */
@@ -425,27 +429,18 @@ body {
   transition: transform 0.1s ease, background-color 0.2s ease;
   z-index: 10000;
 }
-#cookie-popup {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: rgb(2, 2, 52);
-  color: white;
-  padding: 15px 25px;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  z-index: 10000;
-  font-family: Arial, sans-serif;
+#cookie-popup button {
+  background-color: #e1e1e1; /* Bright, eye-catching */
+  color: navy;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 50px; /* Fully rounded */
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-#cookie-popup button {
-  background-color: white;
-  color: rgb(2, 2, 41);
-  border: none;
-  padding: 8px 15px;
-  border-radius: 5px;
-  cursor: pointer;
+#cookie-popup button:hover {
+  background-color: #bababa;
+  transform: scale(1.05);
 }
