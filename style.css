@@ -13,7 +13,7 @@ html {
 }
 
 body {
-  background-color: #0f0f0f;
+  background-color: #060634; /* navy blue base */
   color: white;
   overflow-x: hidden;
 }
@@ -32,9 +32,8 @@ body {
   transition: all 0.4s ease;
 }
 
-/* JS Toggles this class */
 .navbar.scrolled {
-  background: rgba(17, 17, 17, 0.95);
+  background: rgba(1, 1, 43, 0.95); /* navy with transparency */
   padding: 15px 60px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(5px);
@@ -47,7 +46,7 @@ body {
 }
 
 .logo span {
-  color: #ffbb00;
+  color: #525252;
 }
 
 .nav-links a {
@@ -60,12 +59,12 @@ body {
 
 .nav-links a:hover {
   color: #fff;
-  border-bottom: 2px solid #ffbb00;
+  border-bottom: 2px solid #6a6a6a;
 }
 
 .quote-btn {
-  background: #fff;
-  color: #000;
+  background: white;
+  color: #05052a;
   border: none;
   padding: 10px 20px;
   font-weight: 600;
@@ -75,12 +74,12 @@ body {
 }
 
 .quote-btn:hover {
-  background: #ffbb00;
+  background: #5d5d5d;
 }
 
 /* Hero Section */
 .hero {
-  background: radial-gradient(circle at center, #1a1a1a 0%, #0f0f0f 100%);
+  background: radial-gradient(circle at center, #1a1a2e 0%, #0f0f3e 100%);
   height: 100vh;
   display: flex;
   align-items: center;
@@ -108,21 +107,21 @@ body {
   padding: 12px 30px;
   border: none;
   border-radius: 30px;
-  background: #fff;
-  color: #000;
+  background: white;
+  color: #070730;
   font-weight: 600;
   cursor: pointer;
   transition: 0.3s;
 }
 
 .hero button:hover {
-  background: #ffbb00;
+  background: #424242;
 }
 
 /* Sections */
 .section {
   padding: 120px 80px;
-  background-color: #0f0f0f;
+  background-color: #050529;
   text-align: center;
 }
 
@@ -138,13 +137,13 @@ body {
     display: block;
     width: 60px;
     height: 4px;
-    background: #ffbb00;
+    background: #4a4a4a;
     margin: 10px auto 0;
     border-radius: 2px;
 }
 
 .section p {
-  color: #aaa;
+  color: #aaaaaa;
   max-width: 800px;
   margin: 0 auto;
   line-height: 1.6;
@@ -160,12 +159,12 @@ body {
 }
 
 .service-card {
-  background: #1a1a1a;
+  background: #1a1a2e;
   padding: 40px;
   border-radius: 20px;
   width: 300px;
   transition: 0.3s;
-  border: 1px solid #333;
+  border: 1px solid #555;
 }
 
 .service-card h3 {
@@ -174,13 +173,13 @@ body {
 }
 
 .service-card:hover {
-  background: #222;
-  border-color: #ffbb00;
+  background: #5f5f5f;
+  border-color: #4c4c4c;
   transform: translateY(-10px);
 }
 
 .service-card:hover h3 {
-    color: #ffbb00;
+    color: #484848;
 }
 
 /* Work Gallery */
@@ -200,14 +199,14 @@ body {
 }
 
 .work-box:hover {
-  background: #ffbb00;
+  background: #575757;
   transform: scale(1.05);
 }
 
 /* Quote Section */
 .quote-section {
   padding: 120px 80px;
-  background-color: #111;
+  background-color: #060629;
   text-align: center;
 }
 
@@ -221,19 +220,20 @@ body {
 }
 
 .quote-form input,
-.quote-form textarea {
+.quote-form textarea,
+.quote-form select {
   width: 100%;
   padding: 15px;
   border-radius: 10px;
-  border: 1px solid #333;
+  border: 1px solid #3f3f3f;
   outline: none;
-  background: #0f0f0f;
+  background: #040421;
   color: #fff;
   transition: border 0.3s;
 }
 
-.quote-form input:focus, .quote-form textarea:focus {
-    border-color: #ffbb00;
+.quote-form input:focus, .quote-form textarea:focus, .quote-form select:focus {
+    border-color: #707070;
 }
 
 .quote-form textarea {
@@ -242,8 +242,8 @@ body {
 }
 
 .quote-form button {
-  background: #ffbb00;
-  color: #000;
+  background: #6d6c6a;
+  color: #0f0f3e;
   font-weight: bold;
   padding: 15px 40px;
   border-radius: 25px;
@@ -254,11 +254,11 @@ body {
 }
 
 .quote-form button:hover {
-  background: #fff;
+  background: white;
 }
 
 .quote-form button.success {
-    background-color: #4CAF50;
+    background-color: #7b7d7b;
     color: white;
 }
 
@@ -266,8 +266,8 @@ body {
 .footer {
   text-align: center;
   padding: 40px;
-  background: #0a0a0a;
-  color: #888;
+  background: #04042c;
+  color: #595858;
 }
 
 /* --- Animations --- */
@@ -288,4 +288,123 @@ body {
     .nav-links { display: none; }
     .hero h1 { font-size: 3rem; }
     .section { padding: 80px 20px; }
+}
+.footer {
+    background: #020030;
+    color: #fff;
+    padding: 60px 40px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.footer-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.footer-wrapper {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    text-align: left;
+}
+
+.footer-col h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.footer-col p {
+    line-height: 1.6;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.icons a {
+    margin-right: 12px;
+    text-decoration: none;
+    color: white;
+}
+
+@media (max-width: 900px) {
+    .footer-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-wrapper {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+.work-gallery {
+  display: flex;
+  gap: 30px;
+}
+
+.work-item {
+  width: 300px;
+}
+
+.work-box {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.work-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s ease;
+}
+
+.work-box:hover img {
+  transform: scale(1.15);
+}
+
+/* Overlay */
+.work-box::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0);
+  transition: 0.4s ease;
+}
+
+.work-box:hover::after {
+  background: rgba(0,0,0,0.45);
+}
+
+/* Title */
+.work-title {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: 0.4s ease;
+}
+
+.work-box:hover .work-title {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Description under image */
+.work-desc {
+  margin-top: 12px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #333;
 }
