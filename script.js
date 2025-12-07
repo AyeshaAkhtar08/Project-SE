@@ -40,78 +40,69 @@ revealElements.forEach((el) => {
 // ------------------------------
 document.addEventListener("DOMContentLoaded", function() {
 
-// Initialize EmailJS
-emailjs.init("XPcCcDHxEky3RTEtj"); // Replace with your EmailJS Public Key
+  // Initialize EmailJS
+  emailjs.init("XPcCcDHxEky3RTEtj");
 
-const form = document.getElementById("quoteForm");
-const statusDiv = document.getElementById("status");
+  const form = document.getElementById("quoteForm");
+  const statusDiv = document.getElementById("status");
 
-if (!form) {
-console.error("Form not found! Make sure the form ID is 'quoteForm'.");
-return;
-}
+  if (!form) {
+    console.error("Form not found! Make sure the form ID is 'quoteForm'.");
+    return;
+  }
 
-form.addEventListener("submit", function(e) {
-e.preventDefault();
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
 
-// Get input elements
-const fullNameInput = document.getElementById("fullName");
-const emailInput = document.getElementById("email");
-const companyInput = document.getElementById("company");
-const detailsInput = document.getElementById("details");
+    // Get input elements
+    const firstName = document.getElementById("firstName")?.value.trim();
+    const lastName = document.getElementById("lastName")?.value.trim();
+    const surName = document.getElementById("surName")?.value.trim();
+    const email = document.getElementById("email")?.value.trim();
+    const contact = document.getElementById("contact")?.value.trim();
+    const service = document.getElementById("service")?.value.trim();
+    const details = document.getElementById("details")?.value.trim();
 
-// Check if elements exist
-if (!fullNameInput || !emailInput || !detailsInput || !companyInput) {
-  console.error("One or more form fields are missing!");
-  return;
-}
+    // Basic validation
+    if (!firstName || !lastName || !surName || !email || !contact || !service || !details) {
+      statusDiv.innerText = "Please fill all required fields.";
+      return;
+    }
 
-// Get trimmed values
-// Get trimmed values safely
-const fullName = fullNameInput.value.trim();
-const email = emailInput.value.trim();
-const company = companyInput?.value?.trim() || ""; // <-- safe now
-const details = detailsInput.value.trim();
+    // Disable submit button while sending
+    const submitBtn = form.querySelector("button");
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending...";
 
+    // Send email via EmailJS
+    emailjs.send("service_ll9vcpt", "template_4vtge4h", {
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      contact: contact,
+      service: service,
+      details: details,
+      time: new Date().toLocaleString()
+    })
+    .then(function(response) {
+      console.log("SUCCESS!", response.status, response.text);
+      statusDiv.innerText = "Quotation request sent successfully!";
+      submitBtn.textContent = "Submitted ✓";
 
-// Basic validation
-if (!fullName || !email || !details) {
-  statusDiv.innerText = "Please fill all required fields.";
-  return;
-}
+      setTimeout(() => {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Submit";
+        form.reset();
+        statusDiv.innerText = "";
+      }, 2500);
+    })
+    .catch(function(error) {
+      console.error("FAILED TO SEND EMAIL", error);
+      statusDiv.innerText = "Failed to send email. Check console for details.";
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Submit";
+    });
 
-// Disable submit button while sending
-const submitBtn = form.querySelector("button");
-submitBtn.disabled = true;
-submitBtn.textContent = "Sending...";
-
-// Send email via EmailJS
-emailjs.send("service_ll9vcpt", "template_4vtge4h", {
-  fullName: fullName,
-  email: email,
-  company: company,
-  details: details,
-  time: new Date().toLocaleString()
-})
-.then(function(response) {
-  console.log("SUCCESS!", response.status, response.text);
-  statusDiv.innerText = "Quotation request sent successfully!";
-  submitBtn.textContent = "Submitted ✓";
-
-  setTimeout(() => {
-    submitBtn.disabled = false;
-    submitBtn.textContent = "Submit";
-    form.reset();
-    statusDiv.innerText = "";
-  }, 2500);
-})
-.catch(function(error) {
-  console.error("FAILED TO SEND EMAIL", error);
-  statusDiv.innerText = "Failed to send email. Check console for details.";
-  submitBtn.disabled = false;
-  submitBtn.textContent = "Submit";
-});
-
-});
+  });
 
 });
