@@ -72,14 +72,13 @@ document.addEventListener("DOMContentLoaded", function() {
     // Get input elements
     const firstName = document.getElementById("firstName")?.value.trim();
     const lastName = document.getElementById("lastName")?.value.trim();
-    const surName = document.getElementById("surName")?.value.trim();
     const email = document.getElementById("email")?.value.trim();
     const contact = document.getElementById("contact")?.value.trim();
     const service = document.getElementById("service")?.value.trim();
     const details = document.getElementById("details")?.value.trim();
 
     // Basic validation
-    if (!firstName || !lastName || !surName || !email || !contact || !service || !details) {
+    if (!firstName || !lastName || !email || !contact || !service || !details) {
       statusDiv.innerText = "Please fill all required fields.";
       return;
     }
