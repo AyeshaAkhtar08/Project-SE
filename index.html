@@ -5,95 +5,99 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Exerge Clone | Modern Frontend</title>
   <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-<script>
-  emailjs.init("XPcCcDHxEky3RTEtj"); // this will work
-</script>
-<script>
-  (function() {
-    emailjs.init("XPcCcDHxEky3RTEtj"); // Replace with your EmailJS Public Key
-  })();
-</script>
+  
+  <!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<!-- Your script -->
+
+
 
 </head>
 <body>
-    <div id="custom-cursor"></div>
 
-  <!-- Navbar -->
-  <header class="navbar">
-    <div class="logo">
-      <h2>exerge<span>it</span></h2>
+<div id="custom-cursor"></div>
+
+<!-- Navbar -->
+<header class="navbar">
+  <div class="logo">
+    <h2>exerge<span>it</span></h2>
+  </div>
+  <nav class="nav-links">
+    <a href="#company">Company</a>
+    <a href="#services">Services</a>
+    <a href="#work">Our Work</a>
+    <a href="#latest">Latest</a>
+    <a href="#contact">Contact Us</a>
+  </nav>
+  <button class="quote-btn" onclick="scrollToSection('quote')">Get a Quote</button>
+</header>
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <h1>Websites.</h1>
+    <p>We design and build modern digital experiences for innovative brands.</p>
+    <button onclick="scrollToSection('services')">Learn More</button>
+  </div>
+</section>
+
+<!-- Company Section -->
+<section class="section" id="company">
+  <h2>About Our Company</h2>
+  <p>
+    Exerge is a creative technology agency specializing in designing and developing unique digital experiences. 
+    They offer end-to-end solutions, including web and mobile app development, branding, and SEO services. 
+    Their team focuses on creating visually compelling, user-friendly, and scalable products tailored to each client’s needs. 
+    With a strong commitment to quality and innovation, Exerge ensures that projects are delivered on time and generate real business value. 
+    By blending creativity with technology, they help businesses stand out and succeed in the digital landscape.
+  </p>
+</section>
+
+<!-- Services Section -->
+<section class="section" id="services">
+  <h2>Our Services</h2>
+  <div class="services-grid">
+
+    <div class="service-card">
+      <h3>Web Application</h3>
+      <p>Interactive and scalable web applications tailored to your business needs.</p>
     </div>
-    <nav class="nav-links">
-      <a href="#company">Company</a>
-      <a href="#services">Services</a>
-      <a href="#work">Our Work</a>
-      <a href="#latest">Latest</a>
-      <a href="#contact">Contact Us</a>
-    </nav>
-    <button class="quote-btn" onclick="scrollToSection('quote')">Get a Quote</button>
-  </header>
 
-  <!-- Hero Section -->
-  <section class="hero" id="home">
-    <div class="hero-content">
-      <h1>Websites.</h1>
-      <p>We design and build modern digital experiences for innovative brands.</p>
-      <button onclick="scrollToSection('services')">Learn More</button>
+    <div class="service-card">
+      <h3>Web Development</h3>
+      <p>Robust and scalable solutions using the latest technologies.</p>
     </div>
-  </section>
 
-  <!-- Company Section -->
-  <section class="section" id="company">
-    <h2>About Our Company</h2>
-    <p>
-        Exerge is a creative technology agency specializing in designing and developing unique digital experiences. 
-        They offer end-to-end solutions, including web and mobile app development, branding, and SEO services. 
-        Their team focuses on creating visually compelling, user-friendly, and scalable products tailored to each client’s needs. 
-        With a strong commitment to quality and innovation, Exerge ensures that projects are delivered on time and generate real business value. 
-        By blending creativity with technology, they help businesses stand out and succeed in the digital landscape.
-    </p>
-  </section>
-
-  <!-- Services Section -->
-  <section class="section" id="services">
-    <h2>Our Services</h2>
-    <div class="services-grid">
-      <div class="service-card">
-        <h3>Web Application</h3>
-        <p>Interactive and scalable web applications tailored to your business needs.</p>
-      </div>
-      <div class="service-card">
-        <h3>Web Development</h3>
-        <p>Robust and scalable solutions using the latest technologies.</p>
-      </div>
-      <div class="service-card">
-        <h3>Mobile AppMobile App</h3>
-        <p>Custom mobile app development for seamless user experiences on iOS and Android.</p>
-      </div>
-      <div class="service-card">
-        <h3>Web Branding and Design</h3>
-        <p>Beautiful and responsive designs tailored to your brand identity.</p>
-      </div>
-            <div class="service-card">
-        <h3>Managed Website Hosting</h3>
-        <p>Reliable and hassle-free hosting services with full management and support for your website.</p>
-      </div>
-            <div class="service-card">
-        <h3>SEO</h3>
-        <p>Optimizing your website to rank higher in search engines and attract more organic traffic.</p>
-      </div>
+    <div class="service-card">
+      <h3>Mobile App</h3>
+      <p>Custom mobile app development for seamless user experiences on iOS and Android.</p>
     </div>
-  </section>
 
-  <!-- Our Work Section -->
+    <div class="service-card">
+      <h3>Web Branding and Design</h3>
+      <p>Beautiful and responsive designs tailored to your brand identity.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Managed Website Hosting</h3>
+      <p>Reliable and hassle-free hosting services with full management and support for your website.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>SEO</h3>
+      <p>Optimizing your website to rank higher in search engines and attract more organic traffic.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- Our Work Section -->
 <section class="section" id="work">
   <h2>Our Work</h2>
 
   <div class="work-gallery">
 
-    <!-- Work 1 -->
     <div class="work-item">
       <div class="work-box">
         <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1200" alt="Project 1">
@@ -105,7 +109,6 @@
       </p>
     </div>
 
-    <!-- Work 2 -->
     <div class="work-item">
       <div class="work-box">
         <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200" alt="Project 2">
@@ -117,7 +120,6 @@
       </p>
     </div>
 
-    <!-- Work 3 -->
     <div class="work-item">
       <div class="work-box">
         <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200" alt="Project 3">
@@ -132,87 +134,83 @@
   </div>
 </section>
 
-  <!-- Latest Section -->
-  <section class="section" id="latest">
-    <h2>Latest Updates</h2>
-    <p>Stay updated with our latest news, innovations, and expert insights.Explore our blog for in-depth articles and industry trends.</p>
-  </section>
+<!-- Latest Section -->
+<section class="section" id="latest">
+  <h2>Latest Updates</h2>
+  <p>Stay updated with our latest news, innovations, and expert insights. Explore our blog for in-depth articles and industry trends.</p>
+</section>
 
-  <!-- Get a Quote Section -->
-  
+<!-- Get a Quote Section -->
 <section class="quote-section" id="quote">
-    <h2>Get a Quote</h2>
-    <p>Fill out the form below and we'll get back to you shortly.</p>
+  <h2>Get a Quote</h2>
+  <p>Fill out the form below and we'll get back to you shortly.</p>
 
-    <form id="quoteForm" class="quote-form">
+  <form id="quoteForm" class="quote-form">
 
-        <input type="text" id="firstName" placeholder="First Name" required>
-        <input type="text" id="lastName" placeholder="Last Name" required>
-        <input type="email" id="email" placeholder="Email Address" required>
+    <input type="text" id="firstName" placeholder="First Name" required>
+    <input type="text" id="lastName" placeholder="Last Name" required>
+    <input type="email" id="email" placeholder="Email Address" required>
 
-        <input type="text" id="contact" placeholder="Contact Number" required>
+    <input type="text" id="contact" placeholder="Contact Number" required>
 
-        <select id="services" required>
-            <option value="">Select a Service</option>
-            <option>Website Development</option>
-            <option>Web Application</option>
-            <option>Mobile App</option>
-            <option>Managed Website Hosting</option>
-            <option>Branding & Design</option>
-            <option>Search Engine Optimization</option>
-        </select>
+    <select id="service" required>
+  <option value="">Select a Service</option>
+  <option value="Website Development">Website Development</option>
+  <option value="Web Application">Web Application</option>
+  <option value="Mobile App">Mobile App</option>
+  <option value="Managed Website Hosting">Managed Website Hosting</option>
+  <option value="Branding & Design">Branding & Design</option>
+  <option value="Search Engine Optimization">Search Engine Optimization</option>
+</select>
 
-        <textarea id="details" placeholder="Project Details..." required></textarea>
 
-        <div id="status"></div>
+    <textarea id="details" placeholder="Project Details..." required></textarea>
 
-        <button type="submit">Submit</button>
-    </form>
+    <div id="status"></div>
+
+    <button type="submit">Submit</button>
+  </form>
 </section>
 
-
-  <div id="status" style="margin-top: 20px; color: #fff;"></div>
-</section>
-
-  <!-- Footer -->
+<!-- Footer -->
 <footer class="footer" id="contact">
-    <h2 class="footer-title">Contact Us</h2>
-    <p>© 2025 Exerge Clone. All Rights Reserved.</p>
+  <h2 class="footer-title">Contact Us</h2>
+  <p>© 2025 Exerge Clone. All Rights Reserved.</p>
 
-    <div class="footer-wrapper">
+  <div class="footer-wrapper">
 
-        <!-- UK -->
-        <div class="footer-col">
-            <h3>UK</h3>
-            <p>20, Chines Gardens,<br>
-            West Bridgford,<br>
-            NG27TT<br>
-            UK</p>
-        </div>
-
-        <!-- Pakistan -->
-        <div class="footer-col">
-            <h3>PK</h3>
-            <p>2121,<br>
-            Phase 7, Bahria Town,<br>
-            Islamabad, 46000<br>
-            PK</p>
-        </div>
-
-        <!-- Conversation -->
-        <div class="footer-col">
-            <h3>Conversation</h3>
-            <p>Email: hello@exerge.com</p>
-            <p>UK: 07934 554778</p>
-            <p>Pakistan: 0308 8557557</p>
-            <p>Americas: 646 932 3253</p>
-        </div>
-
+    <div class="footer-col">
+      <h3>UK</h3>
+      <p>20, Chines Gardens,<br>
+      West Bridgford,<br>
+      NG27TT<br>
+      UK</p>
     </div>
+
+    <div class="footer-col">
+      <h3>PK</h3>
+      <p>2121,<br>
+      Phase 7, Bahria Town,<br>
+      Islamabad, 46000<br>
+      PK</p>
+    </div>
+
+    <div class="footer-col">
+      <h3>Conversation</h3>
+      <p>Email: hello@exerge.com</p>
+      <p>UK: 07934 554778</p>
+      <p>Pakistan: 0308 8557557</p>
+      <p>Americas: 646 932 3253</p>
+    </div>
+
+  </div>
 </footer>
+
+<!-- Cookie Popup -->
 <div id="cookie-popup">
-  <p>We use cookies to enhance your browsing experience and keep our website running smoothly. Don’t worry—they’re the helpful kind, not the ones you eat. By continuing, you agree to our <a href="#">Privacy Policy</a>.</p>
+  <p>We use cookies to enhance your browsing experience and keep our website running smoothly. By continuing, you agree to our <a href="#">Privacy Policy</a>.</p>
   <button id="accept-cookies" class="cookie-btn">Got Cookies?</button>
 </div>
+<script defer src="script.js"></script>
 </body>
 </html>
