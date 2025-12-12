@@ -105,33 +105,48 @@ document.addEventListener("DOMContentLoaded", function () {
     submitBtn.textContent = "Sending...";
 
     emailjs
-      .send("service_ll9vcpt", "template_4vtge4h", {
-        firstName,
-        lastName,
-        email,
-        contact,
-        service,
-        details,
-        time: new Date().toLocaleString(),
-      })
-      .then((response) => {
-        console.log("SUCCESS!", response.status, response.text);
-        statusDiv.innerText = "Quotation request sent successfully!";
-        submitBtn.textContent = "Submitted ✓";
+  .send("service_ll9vcpt", "template_4vtge4h", {
+    firstName,
+    lastName,
+    email,
+    contact,
+    service,
+    details,
+    time: new Date().toLocaleString(),
+  })
+  .then((response) => {
+    console.log("SUCCESS!", response.status, response.text);
 
-        setTimeout(() => {
-          submitBtn.disabled = false;
-          submitBtn.textContent = "Submit";
-          form.reset();
-          statusDiv.innerText = "";
-        }, 2500);
-      })
-      .catch((error) => {
-        console.error("FAILED TO SEND EMAIL", error);
-        statusDiv.innerText = "Failed to send email. Check console for details.";
-        submitBtn.disabled = false;
-        submitBtn.textContent = "Submit";
-      });
+    // Now send confirmation email to the client
+    return emailjs.send("service_ll9vcpt", "template_a78kz45", {
+      //to_email: email,        // client email
+      firstName,
+      lastName,
+      email,
+      contact,
+      service,
+      details,
+      time: new Date().toLocaleString(),
+    });
+  })
+  .then(() => {
+    statusDiv.innerText = "Quotation request sent successfully!";
+    submitBtn.textContent = "Submitted ✓";
+
+    setTimeout(() => {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Submit";
+      form.reset();
+      statusDiv.innerText = "";
+    }, 2500);
+  })
+  .catch((error) => {
+    console.error("FAILED TO SEND EMAIL", error);
+    statusDiv.innerText = "Failed to send email. Check console for details.";
+    submitBtn.disabled = false;
+    submitBtn.textContent = "Submit";
+  });
+
   });
 });
 
